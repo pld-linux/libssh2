@@ -1,8 +1,8 @@
-Summary:	Library implementing the SSH2 protocol.
-Summary(pl):	Biblioteka implementuj±ca protokó³ SSH2.
+Summary:	Library implementing the SSH2 protocol
+Summary(pl):	Biblioteka implementuj±ca protokó³ SSH2
 Name:		libssh2
 Version:	0.4
-Release:	0.0.1
+Release:	0.1
 License:	BSD
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libssh2/%{name}-%{version}.tar.gz
@@ -16,7 +16,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 libssh2 is a C library implementing the SSH2 protocol according to
 Internet Draft specifications SECSH-TRANS(22), SECSH-USERAUTH(25),
-SECSH-CONNECTION(23), SECSH-ARCH(20), SECSH-FILEXFER(06)*,
+SECSH-CONNECTION(23), SECSH-ARCH(20), SECSH-FILEXFER(06),
 SECSH-DHGEX(04), and SECSH-NUMBERS(10).
 
 Supported Ciphers:  
@@ -27,7 +27,7 @@ Supported Ciphers:
 - blowfish-cbc
 - cast128-cbc
 - arcfour
-- none**
+- none
 
 Supported Key Exchange Methods: 
 - diffie-hellman-group1-sha1
@@ -48,7 +48,40 @@ Supported Message Authentication Codes:
 - hmac-ripemd160
 - hmac-ripemd160@openssh.com
 
-#%description -l pl
+%description -l pl
+libssh2 to biblioteka C implementuj±ca protokó³ SSH2 zgodnie ze
+specyfikacjami Internet Draft SECSH-TRANS(22), SECSH-USERAUTH(25),
+SECSH-CONNECTION(23), SECSH-ARCH(20), SECSH-FILEXFER(06),
+SECSH-DHGEX(04), and SECSH-NUMBERS(10).
+
+Obs³ugiwane szyfry:
+- aes256-cbc (znany te¿ jako rijndael-cbc@lysator.liu.se)
+- aes192-cbc
+- aes128-cbc
+- 3des-cbc
+- blowfish-cbc
+- cast128-cbc
+- arcfour
+- none
+
+Obs³ugiwane metody wymiany kluczy:
+- diffie-hellman-group1-sha1
+- diffie-hellman-group14-sha1
+- diffie-hellman-group-exchange-sha1
+
+Obs³ugiwane rodzaju kluczy hosta:
+- ssh-rsa
+- ssh-dss
+
+Obs³ugiwane metody kompresji:
+- zlib
+- none
+
+Obs³ugiwane kody uwierzytelniania wiadomo¶ci:
+- hmac-sha1
+- hmac-sha1-96
+- hmac-ripemd160
+- hmac-ripemd160@openssh.com
 
 %package devel
 Summary:	Header files for libssh2 library
