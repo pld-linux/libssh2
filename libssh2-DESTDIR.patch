@@ -1,0 +1,34 @@
+diff -burN libssh2-0.4.orig/Makefile.in libssh2-0.4/Makefile.in
+--- libssh2-0.4.orig/Makefile.in	2004-12-25 11:49:22.235014936 +0100
++++ libssh2-0.4/Makefile.in	2004-12-25 11:50:31.301515232 +0100
+@@ -21,14 +21,14 @@
+ 	$(CC) -o ssh2_sample.o ssh2_sample.c $(CFLAGS)
+ 	$(CC) -o ssh2_sample ssh2_sample.o $(LIBS)
+ install:
+-	$(top_srcdir)/mkinstalldirs $(incldir)
+-	$(top_srcdir)/mkinstalldirs $(libdir)
++	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(incldir)
++	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(libdir)
+ 	@for dir in ${subdirs}; do \
+ 		(cd $$dir && $(MAKE) install) \
+ 		|| case "$(MFLAGS)" in *k*) fail=yes;; *) exit 1;; esac; \
+ 	done && test -z "$$fail"
+-	$(INSTALL) -m 644 include/libssh2.h $(incldir)/
+-	$(INSTALL) -m 644 include/libssh2_sftp.h $(incldir)/
++	$(INSTALL) -m 644 include/libssh2.h $(DESTDIR)$(incldir)/
++	$(INSTALL) -m 644 include/libssh2_sftp.h $(DESTDIR)$(incldir)/
+ clean:
+ 	@for dir in ${subdirs}; do \
+ 		(cd $$dir && $(MAKE) clean) \
+diff -burN libssh2-0.4.orig/src/Makefile.in libssh2-0.4/src/Makefile.in
+--- libssh2-0.4.orig/src/Makefile.in	2004-12-25 11:49:22.238014480 +0100
++++ libssh2-0.4/src/Makefile.in	2004-12-25 11:50:43.553652624 +0100
+@@ -57,7 +57,7 @@
+ 	ar q libssh2.a $(OBJECTS)
+ 	@RANLIB@ libssh2.a
+ install: all
+-	$(INSTALL) libssh2.@SHLIB_SUFFIX_NAME@ $(libdir)
++	$(INSTALL) libssh2.@SHLIB_SUFFIX_NAME@ $(DESTDIR)$(libdir)
+ clean:
+ 	rm -f *~ libssh2.a libssh2.@SHLIB_SUFFIX_NAME@ *.o
+ 
