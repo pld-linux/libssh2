@@ -75,7 +75,8 @@ Pliki nag³ówkowe biblioteki libssh2.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	libdir=%{_libdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
