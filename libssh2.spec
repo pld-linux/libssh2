@@ -3,13 +3,14 @@ Summary(pl):	Biblioteka implementuj±ca protokó³ SSH2.
 Name:		libssh2
 Version:	0.4
 Release:	0.0.1
-License:	LGPL
+License:	BSD
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libssh2/%{name}-%{version}.tar.gz
 # Source0-md5:	bc7125a008d2d32f233193715395c250
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://libssh2.sourceforge.net/
 BuildRequires:	openssl-devel
+BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -61,18 +62,6 @@ Header files for libssh2 library.
 %description devel -l pl
 Pliki nag³ówkowe biblioteki libssh2.
 
-%package static
-Summary:	Static libssh2 library
-Summary(pl):	Statyczna biblioteka libssh2
-Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}-%{release}
-
-%description static
-Static libssh2 library.
-
-%description static -l pl
-Statyczna biblioteka libssh2.
-
 %prep
 %setup -q
 %patch0 -p1
@@ -103,7 +92,3 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 #%attr(755,root,root) %{_libdir}/lib*.so
 %{_includedir}/*
-
-%files static
-%defattr(644,root,root,755)
-#%{_libdir}/lib*.a
