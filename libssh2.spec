@@ -8,6 +8,7 @@ Group:		Libraries
 Source0:	http://dl.sourceforge.net/libssh2/%{name}-%{version}.tar.gz
 # Source0-md5:	fc792dd27f19169d55d4ab20d6e0fffa
 URL:		http://libssh2.sourceforge.net/
+BuildRequires:	automake
 BuildRequires:	openssl-devel
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -98,6 +99,7 @@ Pliki nag³ówkowe biblioteki libssh2.
 %setup -q
 
 %build
+cp -f /usr/share/automake/config.sub .
 %configure \
 	--with-openssl=%{_prefix}
 %{__make}
