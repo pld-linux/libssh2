@@ -2,7 +2,7 @@ Summary:	Library implementing the SSH2 protocol
 Summary(pl):	Biblioteka implementuj±ca protokó³ SSH2
 Name:		libssh2
 Version:	0.5
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libssh2/%{name}-%{version}.tar.gz
