@@ -1,5 +1,5 @@
 Summary:	Library implementing the SSH2 protocol
-Summary(pl):	Biblioteka implementuj±ca protokÛ≥ SSH2
+Summary(pl.UTF-8):   Biblioteka implementujƒÖca protok√≥≈Ç SSH2
 Name:		libssh2
 Version:	0.14
 Release:	1
@@ -48,14 +48,14 @@ Supported Message Authentication Codes:
 - hmac-ripemd160
 - hmac-ripemd160@openssh.com
 
-%description -l pl
-libssh2 to biblioteka C implementuj±ca protokÛ≥ SSH2 zgodnie ze
+%description -l pl.UTF-8
+libssh2 to biblioteka C implementujƒÖca protok√≥≈Ç SSH2 zgodnie ze
 specyfikacjami Internet Draft SECSH-TRANS(22), SECSH-USERAUTH(25),
 SECSH-CONNECTION(23), SECSH-ARCH(20), SECSH-FILEXFER(06),
 SECSH-DHGEX(04), and SECSH-NUMBERS(10).
 
-Obs≥ugiwane szyfry:
-- aes256-cbc (znany teø jako rijndael-cbc@lysator.liu.se)
+Obs≈Çugiwane szyfry:
+- aes256-cbc (znany te≈º jako rijndael-cbc@lysator.liu.se)
 - aes192-cbc
 - aes128-cbc
 - 3des-cbc
@@ -64,20 +64,20 @@ Obs≥ugiwane szyfry:
 - arcfour
 - none
 
-Obs≥ugiwane metody wymiany kluczy:
+Obs≈Çugiwane metody wymiany kluczy:
 - diffie-hellman-group1-sha1
 - diffie-hellman-group14-sha1
 - diffie-hellman-group-exchange-sha1
 
-Obs≥ugiwane rodzaju kluczy hosta:
+Obs≈Çugiwane rodzaju kluczy hosta:
 - ssh-rsa
 - ssh-dss
 
-Obs≥ugiwane metody kompresji:
+Obs≈Çugiwane metody kompresji:
 - zlib
 - none
 
-Obs≥ugiwane kody uwierzytelniania wiadomo∂ci:
+Obs≈Çugiwane kody uwierzytelniania wiadomo≈õci:
 - hmac-sha1
 - hmac-sha1-96
 - hmac-ripemd160
@@ -85,15 +85,15 @@ Obs≥ugiwane kody uwierzytelniania wiadomo∂ci:
 
 %package devel
 Summary:	Header files for libssh2 library
-Summary(pl):	Pliki nag≥Ûwkowe biblioteki libssh2
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe biblioteki libssh2
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for libssh2 library.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe biblioteki libssh2.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe biblioteki libssh2.
 
 %prep
 %setup -q
