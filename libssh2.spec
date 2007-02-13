@@ -1,5 +1,5 @@
 Summary:	Library implementing the SSH2 protocol
-Summary(pl.UTF-8):   Biblioteka implementująca protokół SSH2
+Summary(pl.UTF-8):	Biblioteka implementująca protokół SSH2
 Name:		libssh2
 Version:	0.14
 Release:	1
@@ -85,7 +85,7 @@ Obsługiwane kody uwierzytelniania wiadomości:
 
 %package devel
 Summary:	Header files for libssh2 library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libssh2
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libssh2
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
