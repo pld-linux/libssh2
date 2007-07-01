@@ -1,12 +1,12 @@
 Summary:	Library implementing the SSH2 protocol
 Summary(pl.UTF-8):	Biblioteka implementująca protokół SSH2
 Name:		libssh2
-Version:	0.14
+Version:	0.15
 Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libssh2/%{name}-%{version}.tar.gz
-# Source0-md5:	7a44b7b38295d80bd8f80254ee135930
+# Source0-md5:	6c641d6dc0d0e546249cad1d16f10a6a
 URL:		http://libssh2.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	openssl-devel
@@ -95,6 +95,18 @@ Header files for libssh2 library.
 %description devel -l pl.UTF-8
 Pliki nagłówkowe biblioteki libssh2.
 
+%package static
+Summary:	Static libssh2 library
+Summary(pl.UTF-8):	Biblioteka statyczna libssh2
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
+
+%description static
+Static libssh2 library.
+
+%description static -l pl.UTF-8
+Biblioteka statyczna libssh2.
+
 %prep
 %setup -q
 
@@ -120,9 +132,15 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
-%attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.so.*
 
 %files devel
 %defattr(644,root,root,755)
-#%attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.so
 %{_includedir}/*
+%{_libdir}/lib*.la
+%{_mandir}/man3/*
+
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/lib*.a
