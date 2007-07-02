@@ -120,8 +120,7 @@ cp -f /usr/share/automake/config.sub .
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	libdir=%{_libdir}
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -131,16 +130,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
-%attr(755,root,root) %{_libdir}/lib*.so.*
+%doc AUTHORS COPYING ChangeLog NEWS README
+%attr(755,root,root) %{_libdir}/libssh2.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libssh2.so.1
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_includedir}/*
-%{_libdir}/lib*.la
-%{_mandir}/man3/*
+%attr(755,root,root) %{_libdir}/libssh2.so
+%{_libdir}/libssh2.la
+%{_includedir}/libssh2*.h
+%{_mandir}/man3/libssh2_*.3*
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libssh2.a
