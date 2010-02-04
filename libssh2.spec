@@ -1,12 +1,12 @@
 Summary:	Library implementing the SSH2 protocol
 Summary(pl.UTF-8):	Biblioteka implementująca protokół SSH2
 Name:		libssh2
-Version:	1.2.2
+Version:	1.2.3
 Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://www.libssh2.org/download/%{name}-%{version}.tar.gz
-# Source0-md5:	fa8d9cd425bdd62f57244fc61fb54da7
+# Source0-md5:	24144c99908f377c2c4a9b3942102f0b
 URL:		http://libssh2.org/
 BuildRequires:	automake
 BuildRequires:	openssl-devel
@@ -19,7 +19,7 @@ Internet Draft specifications SECSH-TRANS(22), SECSH-USERAUTH(25),
 SECSH-CONNECTION(23), SECSH-ARCH(20), SECSH-FILEXFER(06),
 SECSH-DHGEX(04), and SECSH-NUMBERS(10).
 
-Supported Ciphers:  
+Supported Ciphers:
 - aes256-cbc (aka rijndael-cbc@lysator.liu.se)
 - aes192-cbc
 - aes128-cbc
@@ -29,12 +29,12 @@ Supported Ciphers:
 - arcfour
 - none
 
-Supported Key Exchange Methods: 
+Supported Key Exchange Methods:
 - diffie-hellman-group1-sha1
 - diffie-hellman-group14-sha1
 - diffie-hellman-group-exchange-sha1
 
-Supported Hostkey Types:  
+Supported Hostkey Types:
 - ssh-rsa
 - ssh-dss
 
