@@ -2,12 +2,14 @@ Summary:	Library implementing the SSH2 protocol
 Summary(pl.UTF-8):	Biblioteka implementująca protokół SSH2
 Name:		libssh2
 Version:	1.2.8
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries
 Source0:	http://www.libssh2.org/download/%{name}-%{version}.tar.gz
 # Source0-md5:	1b236563b75d1b1f0d483352dc5918cf
 URL:		http://libssh2.org/
+Patch0:		%{name}-version.patch
+BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	openssl-devel
 BuildRequires:	zlib-devel
@@ -109,9 +111,11 @@ Biblioteka statyczna libssh2.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 cp -f /usr/share/automake/config.sub .
+%{__autoconf}
 %configure \
 	--with-openssl=%{_prefix}
 # AC_LIB_HAVE_LINKFLAGS adds unwanted -L/usr/lib to each LTLIB* - override it
