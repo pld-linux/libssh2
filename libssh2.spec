@@ -144,7 +144,7 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libssh2.so
-%attr(755,root,root) %{_libdir}/libssh2.la
+%{_libdir}/libssh2.la
 %{_includedir}/libssh2*.h
 %{_mandir}/man3/libssh2_*.3*
 %{_pkgconfigdir}/libssh2.pc
