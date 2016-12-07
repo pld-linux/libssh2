@@ -1,12 +1,12 @@
 Summary:	Library implementing the SSH2 protocol
 Summary(pl.UTF-8):	Biblioteka implementująca protokół SSH2
 Name:		libssh2
-Version:	1.7.0
+Version:	1.8.0
 Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	https://www.libssh2.org/download/%{name}-%{version}.tar.gz
-# Source0-md5:	b01662a210e94cccf2f76094db7dac5c
+# Source0-md5:	3d1147cae66e2959ea5441b183de1b1c
 URL:		https://libssh2.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -22,33 +22,34 @@ SECSH-CONNECTION(23), SECSH-ARCH(20), SECSH-FILEXFER(06),
 SECSH-DHGEX(04), and SECSH-NUMBERS(10).
 
 Supported Ciphers:
-- aes256-cbc (aka rijndael-cbc@lysator.liu.se)
-- aes192-cbc
-- aes128-cbc
+- aes256-ctr, aes192-ctr, aes128-ctr,
+- aes256-cbc (aka rijndael-cbc@lysator.liu.se), aes192-cbc, aes128-cbc
 - 3des-cbc
 - blowfish-cbc
 - cast128-cbc
-- arcfour
+- arcfour, arcfour128
 - none
 
 Supported Key Exchange Methods:
 - diffie-hellman-group1-sha1
 - diffie-hellman-group14-sha1
 - diffie-hellman-group-exchange-sha1
+- diffie-hellman-group-exchange-sha256
 
 Supported Hostkey Types:
 - ssh-rsa
 - ssh-dss
 
 Supported Compression Methods:
-- zlib
+- zlib, zlib@openssh.com
 - none
 
 Supported Message Authentication Codes:
-- hmac-sha1
-- hmac-sha1-96
-- hmac-ripemd160
-- hmac-ripemd160@openssh.com
+- hmac-sha2-256, hmac-sha2-512
+- hmac-sha1, hmac-sha1-96
+- hmac-md5, hmac-md5-96
+- hmac-ripemd160 (hmac-ripemd160@openssh.com)
+- none
 
 %description -l pl.UTF-8
 libssh2 to biblioteka C implementująca protokół SSH2 zgodnie ze
@@ -57,19 +58,20 @@ SECSH-CONNECTION(23), SECSH-ARCH(20), SECSH-FILEXFER(06),
 SECSH-DHGEX(04), and SECSH-NUMBERS(10).
 
 Obsługiwane szyfry:
-- aes256-cbc (znany też jako rijndael-cbc@lysator.liu.se)
-- aes192-cbc
-- aes128-cbc
+- aes256-ctr, aes192-ctr, aes128-ctr,
+- aes256-cbc (znany też jako rijndael-cbc@lysator.liu.se), aes192-cbc,
+  aes128-cbc
 - 3des-cbc
 - blowfish-cbc
 - cast128-cbc
-- arcfour
+- arcfour, arcfour128
 - none
 
 Obsługiwane metody wymiany kluczy:
 - diffie-hellman-group1-sha1
 - diffie-hellman-group14-sha1
 - diffie-hellman-group-exchange-sha1
+- diffie-hellman-group-exchange-sha256
 
 Obsługiwane rodzaju kluczy hosta:
 - ssh-rsa
@@ -80,10 +82,11 @@ Obsługiwane metody kompresji:
 - none
 
 Obsługiwane kody uwierzytelniania wiadomości:
-- hmac-sha1
-- hmac-sha1-96
-- hmac-ripemd160
-- hmac-ripemd160@openssh.com
+- hmac-sha2-256, hmac-sha2-512
+- hmac-sha1, hmac-sha1-96
+- hmac-md5, hmac-md5-96
+- hmac-ripemd160 (hmac-ripemd160@openssh.com)
+- none
 
 %package devel
 Summary:	Header files for libssh2 library
