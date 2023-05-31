@@ -125,7 +125,7 @@ Biblioteka statyczna libssh2.
 %{__automake}
 %configure \
 	--disable-silent-rules \
-	--with-openssl=%{_prefix}
+	--with-crypto=openssl
 # AC_LIB_HAVE_LINKFLAGS adds unwanted -L/usr/lib to each LTLIB* - override it
 %{__make} \
 	LTLIBSSL="-lssl -lcrypto" \
